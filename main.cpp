@@ -5,7 +5,6 @@
 
 using namespace std;
 
-// Function to display menu
 void displayMenu() {
     cout << "\n========== Dictionary Menu ==========\n";
     cout << "1. Add a word\n";
@@ -19,7 +18,6 @@ void displayMenu() {
     cout << "====================================\n";
 }
 
-// Convert string to lowercase for case-insensitive operations
 string toLower(const string& str) {
     string result = str;
     for (char& c : result) {
@@ -42,11 +40,10 @@ int main() {
         displayMenu();
         cout << "Enter your choice (1-8): ";
         cin >> choice;
-        cin.ignore();  // Clear the newline from input buffer
+        cin.ignore();
         
         switch (choice) {
             case 1: {
-                // Add a word
                 cout << "\n--- Add a New Word ---\n";
                 cout << "Enter word: ";
                 getline(cin, word);
@@ -62,7 +59,6 @@ int main() {
             }
             
             case 2: {
-                // Search for a word
                 cout << "\n--- Search for a Word ---\n";
                 cout << "Enter word to search: ";
                 getline(cin, word);
@@ -78,7 +74,6 @@ int main() {
             }
             
             case 3: {
-                // Display definition
                 cout << "\n--- Display Definition ---\n";
                 cout << "Enter word: ";
                 getline(cin, word);
@@ -88,13 +83,11 @@ int main() {
             }
             
             case 4: {
-                // Display all words
                 dict.displayAll();
                 break;
             }
             
             case 5: {
-                // Remove a word
                 cout << "\n--- Remove a Word ---\n";
                 cout << "Enter word to remove: ";
                 getline(cin, word);
@@ -104,14 +97,12 @@ int main() {
             }
             
             case 6: {
-                // Check dictionary size
                 cout << "\nDictionary currently has " << dict.getSize() 
                           << " word(s).\n";
                 break;
             }
             
             case 7: {
-                // Run demo with sample data
                 cout << "\n--- Loading Sample Data ---\n";
                 
                 dict.addWord("algorithm", "A step-by-step procedure for solving a problem.");
@@ -132,7 +123,6 @@ int main() {
             }
             
             case 8: {
-                // Exit
                 cout << "\nThank you for using the Dictionary!\n";
                 cout << "Goodbye!\n";
                 return 0;
